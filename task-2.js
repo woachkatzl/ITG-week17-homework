@@ -76,3 +76,14 @@ class Bike extends Transport {
         return this.maxSpeed;
     }
 }
+
+//Created a new array of objects built with the classes based on the objects in the original array. Now every object of the new array can use any of the methods available in the created classes
+const dataForDisplay = data.map(item => {
+    if (item.type === 'car') {
+        const newItem = new Car(item.price, item.brand, item.doors);
+        return newItem;
+    } else if (item.type === 'bike') {
+        const newItem = new Bike(item.price, item.brand, item.maxSpeed);
+        return newItem;
+    }
+});
